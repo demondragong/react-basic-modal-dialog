@@ -7,6 +7,8 @@ exports.default = ModalDialog;
 
 var _react = require("react");
 
+var _jsxRuntime = require("react/jsx-runtime");
+
 function ModalDialog(_ref) {
   let {
     isDialogVisible,
@@ -28,13 +30,15 @@ function ModalDialog(_ref) {
 
   const preventAutoClose = e => e.stopPropagation();
 
-  return /*#__PURE__*/React.createElement("dialog", {
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("dialog", {
     className: dialogClassName,
     ref: dialogRef,
     onCancel: closeDialog,
-    onClick: closeDialog
-  }, /*#__PURE__*/React.createElement("div", {
-    className: divClassName,
-    onClick: preventAutoClose
-  }, children));
+    onClick: closeDialog,
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: divClassName,
+      onClick: preventAutoClose,
+      children: children
+    })
+  });
 }
