@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function ModalDialog({ isDialogVisible, children, closeDialog, dialogClassName, divClassName }) {
+export default function ModalDialog({ isDialogVisible, children, closeDialog, dialogClassName, contentClassName, dialogStyle, contentStyle }) {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -20,10 +20,12 @@ export default function ModalDialog({ isDialogVisible, children, closeDialog, di
       ref={dialogRef}
       onCancel={closeDialog}
       onClick={closeDialog}
+      style={dialogStyle}
     >
       <div
-        className={divClassName}
+        className={contentClassName}
         onClick={preventAutoClose}
+        style={contentStyle}
       >
         {children}
       </div>
