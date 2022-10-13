@@ -84,47 +84,6 @@ export default function Example() {
 }
 ```
 
-### Styling with inline style
-
-```jsx
-import { useState } from "react";
-import ModalDialog from "react-basic-modal-dialog";
-
-export default function Example() {
-  const [isDialogVisible, setIsDialogVisible] = useState(false);
-  const openDialog = () => setIsDialogVisible(true);
-  const closeDialog = () => setIsDialogVisible(false);
-
-  const dialogStyle = {
-    border: "none",
-    borderRadius: "1rem",
-    padding: "0px",
-  };
-
-  const contentStyle = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "1.5rem",
-  };
-
-  return (
-    <>
-      <button onClick={openDialog}>Open modal dialog</button>
-      <ModalDialog
-        isDialogVisible={isDialogVisible}
-        closeDialog={closeDialog}
-        dialogStyle={dialogStyle}
-        contentStyle={contentStyle}
-      >
-        <p>I'm a dialog with style.</p>
-        <button onClick={closeDialog}>Close</button>
-      </ModalDialog>
-    </>
-  );
-}
-```
 
 ## Properties
 
@@ -142,12 +101,6 @@ export default function Example() {
 
   contentClassName={
   /* String with space-separated class names that will be applied to the content div inside the dialog element */}
-
-  dialogStyle={
-  /* JS object with camelCased CSS properties that will be passed to the dialog style attribute  */}
-
-  contentStyle={
-  /* JS object with camelCased CSS properties that will be passed to the content div style attribute */}
 
 >
 
