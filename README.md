@@ -2,6 +2,13 @@
 
 A simple modal dialog react component built with the [HTML dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
 
+**Disclaimer and acknowledgement**
+
+This package was created as a training project.
+The code is inspired from [this article](https://dev.to/elsyng/react-modal-dialog-using-html-dialog-element-5afk).
+ 
+
+
 ## Features
 
 - Generic
@@ -26,7 +33,9 @@ import { useState } from "react";
 import ModalDialog from "react-basic-modal-dialog";
 
 export default function Example() {
-  // The only two required props for the modal dialog are isDialogVisible (to indicate whether the dialog should be visible or not) and closeDialog (a function setting isDialogVisible to false). Let's create them below.
+  // The only two required props for the modal dialog are isDialogVisible
+  // (to indicate whether the dialog should be visible or not) and closeDialog
+  // (a function setting isDialogVisible to false). Let's create them below.
 
   const [isDialogVisible, setIsDialogVisible] = useState(false);
   const openDialog = () => setIsDialogVisible(true);
@@ -84,7 +93,6 @@ export default function Example() {
 }
 ```
 
-
 ## Properties
 
 ```jsx
@@ -100,7 +108,8 @@ export default function Example() {
   /* String with space-separated class names that will be applied to the dialog element */}
 
   contentClassName={
-  /* String with space-separated class names that will be applied to the content div inside the dialog element */}
+  /* String with space-separated class names that will be applied to the content div
+  inside the dialog element */}
 
 >
 

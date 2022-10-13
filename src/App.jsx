@@ -2,6 +2,8 @@ import { useState } from "react";
 import ModalDialog from "./lib/ModalDialog";
 
 export default function App() {
+  // The only two required props for the modal dialog are isDialogVisible(to indicate whether the dialog should be visible or not) and closeDialog (a function setting isDialogVisible to false). Let's create them below.
+
   const [isDialogVisible, setIsDialogVisible] = useState(false);
   const openDialog = () => setIsDialogVisible(true);
   const closeDialog = () => setIsDialogVisible(false);
