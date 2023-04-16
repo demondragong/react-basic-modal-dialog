@@ -1,16 +1,22 @@
 import { useEffect, useRef } from "react";
 
 export default function ModalDialog({ isDialogVisible, children, closeDialog, dialogClassName, contentClassName }) {
-  const dialogRef = useRef(null);
-
+  const ref = useRef(null)
+  const shown = useRef(false)
   useEffect(() => {
-    const dialog = dialogRef.current;
     if (isDialogVisible) {
-      dialog.showModal();
+      if (!shown.current) {
+        ref.current.showModal()
+      }
+      shown.current = true
     } else {
-      dialog.close();
+      if (shown.current) {
+        ref.current.close()
+      }
+      shown.current = false
     }
-  }, [isDialogVisible]);
+  }, [isDialogVisible])
+
 
   const preventAutoClose = (e) => e.stopPropagation();
 
